@@ -1890,6 +1890,7 @@ section#secao-formulario {
 section#secao-formulario p {
     letter-spacing: 4px;
     font-size: 15px;
+    word-break: keep-all;
 }
 
 .barra {
@@ -2581,6 +2582,16 @@ you can add resource intensive styles.
 *********************/
 
 @media only screen and (max-width: 1024px) {
+    #secao3 {
+        min-height: 850px;
+        background-size: contain;
+        background-position: bottom;
+        background-attachment: initial;
+        background-repeat: no-repeat;
+    }
+    .general-bg {
+        background-size: contain;
+    }
     .publicacao-1,
     .publicacao-2,
     .publicacao-2 p,
@@ -2590,6 +2601,7 @@ you can add resource intensive styles.
         align-items: center !important;
     }
     .text-3 {
+        top: 0;
         width: 100%;
     }
     .text-footer {

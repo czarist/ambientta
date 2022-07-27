@@ -16,10 +16,12 @@
 						</div>
 						<div class="col-12 text-center text-white mt-5 mb-0">
 							<span class="d-flex align-items-center justify-content-center">
-								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos os direitos reservados</p>
-								<a href="https://c5w.com.br/" target="_blank">
-									<img src="<?php echo get_template_directory_uri(); ?>/library/images/c5w.png" style="position: relative;top: -9px;left: 5px;" height="20" width="20">
-								</a>
+								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. Todos os direitos reservados
+									<a href="https://c5w.com.br/" target="_blank">
+										<img src="<?php echo get_template_directory_uri(); ?>/library/images/c5w.png" height="20" width="20">
+									</a>
+								</p>
+
 							</span>
 						</div>
 					</div>
