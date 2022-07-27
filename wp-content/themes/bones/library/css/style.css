@@ -114,6 +114,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -667,18 +668,46 @@ FONT FACE (IN YOUR FACE)
   Be sure to remove the comment brackets.
 */
 
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'MontserratRegular';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'MontserratBold' !important;
+}
+
+h4,
+h5,
+h6,
+b,
+strong {
+    font-family: 'Montserrat-Medium' !important;
+}
+
+span,
+p,
+input,
+label,
+textarea {
+    font-family: 'MontserratRegular' !important;
+}
+
+section#infos h3 {
+    letter-spacing: 4px;
+}
 
 
 /*
@@ -717,141 +746,25 @@ p {
     font-feature-settings: "liga", "dlig";
 }
 
+.barra-textos {
+    border-right: 3px solid black;
+}
 
-/******************************************************************
-Site Name:
-Author:
+.text-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-Stylesheet: Sass Functions
+.text-footer a {
+    color: white !important;
+}
 
-You can do a lot of really cool things in Sass. Functions help you
-make repeated actions a lot easier. They are really similar to mixins,
-but can be used for so much more.
+.text-footer i {
+    margin-right: 5px;
+}
 
-Anyway, keep them all in here so it's easier to find when you're
-looking for one.
-
-For more info on functions, go here:
-http://sass-lang.com/documentation/Sass/Script/Functions.html
-
-******************************************************************/
-
-
-/*********************
-COLOR FUNCTIONS
-These are helpful when you're working
-with shadows and such things. It's essentially
-a quicker way to write RGBA.
-
-Example:
-box-shadow: 0 0 4px black(0.3);
-compiles to:
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-*********************/
-
-
-/*********************
-RESPONSIVE HELPER FUNCTION
-If you're creating a responsive site, then
-you've probably already read
-Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
-
-Here's a nice little helper function for calculating
-target / context
-as mentioned in that book.
-
-Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
-*********************/
-
-
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mixins Stylesheet
-
-This is where you can take advantage of Sass' great features: Mixins.
-I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-Helpful:
-http://sachagreif.com/useful-sass-mixins/
-http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
-http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
-******************************************************************/
-
-
-/*********************
-TRANSITION
-*********************/
-
-
-/*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
-
-
-/*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-
-
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-
-
-/*********************
-BOX SIZING
-*********************/
-
-
-/* @include box-sizing(border-box); */
-
-
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
-
-
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
-
-******************************************************************/
+.barra-textos {}
 
 .last-col {
     float: right;
@@ -1269,7 +1182,7 @@ textarea,
     box-shadow: none;
     border: 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #eaedf2;
     -webkit-transition: background-color 0.24s ease-in-out;
@@ -1788,10 +1701,206 @@ h5,
 HEADER STYLES
 *********************/
 
+#form-contact input[type="checkbox"] {
+    position: relative;
+    top: -2px;
+    left: 2px;
+}
+
+#secao3 {
+    min-height: 820px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#infos {
+    background-color: #DA6A5E;
+    color: white;
+}
+
+.text-3 {
+    background-color: #DA6A5E;
+    width: 40%;
+    max-width: 100%;
+    height: 260px;
+    position: absolute;
+    right: 0;
+    top: 35%;
+}
+
+.publicacao-1 {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: auto;
+    min-height: 500px !important;
+}
+
+.publicacao-2 {
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: auto;
+    min-height: 500px !important;
+}
+
+.general-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.min-h-500 {
+    min-height: 500px !important;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div#loadContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #DA6A5E;
+    position: fixed;
+    z-index: 9;
+}
+
+input#enviar {
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: transparent;
+    width: 180px;
+}
+
+section#secao-formulario {
+    height: auto;
+    min-height: 500px;
+    background-color: #DA6A5E;
+    width: 100%;
+}
+
+section#secao-formulario p {
+    letter-spacing: 4px;
+    font-size: 15px;
+}
+
 .barra {
     height: 120px;
     width: 3px;
     background-color: black;
+}
+
+div#inner-header p {
+    margin: 0 !important;
+    letter-spacing: 4px;
 }
 
 header#header {
@@ -2401,59 +2510,11 @@ FOOTER STYLES
 
 .footer {
     clear: both;
-    background-color: #323944;
+    background-color: #DA6A5E;
     color: #f8f9fa;
 }
 
-
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-
-
-/* end .footer-links */
-
-
-/*********************
-LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
-larger than an iPhone but smaller than a tablet. Let's call them
-tweeners.
-*********************/
-
 @media only screen and (min-width: 481px) {
-    /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: 481px and Up Stylesheet
-  
-  This stylesheet is loaded for larger devices. It's set to
-  481px because at 480px it would load on a landscaped iPhone.
-  This isn't ideal because then you would be loading all those
-  extra styles on that same mobile connection.
-  
-  A word of warning. This size COULD be a larger mobile device,
-  so you still want to keep it pretty light and simply expand
-  upon your base.scss styles.
-  
-  ******************************************************************/
-    /*
-  IMPORTANT NOTE ABOUT SASS 3.3 & UP
-  You can't use @extend within media queries
-  anymore, so just be aware that if you drop
-  them in here, they won't work.
-  */
-    /*********************
-  NAVIGATION STYLES
-  *********************/
-    /* .menu is clearfixed inside mixins.scss */
     .menu {
         /* end .menu ul */
     }
@@ -2518,6 +2579,25 @@ This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
+
+@media only screen and (max-width: 1024px) {
+    .publicacao-1,
+    .publicacao-2,
+    .publicacao-2 p,
+    .publicacao-2 h3 {
+        justify-content: center !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    .text-3 {
+        width: 100%;
+    }
+    .text-footer {
+        margin-top: 32px;
+        border: transparent;
+        text-align: center;
+    }
+}
 
 @media only screen and (min-width: 768px) {
     /******************************************************************

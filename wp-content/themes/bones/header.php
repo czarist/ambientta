@@ -40,14 +40,28 @@
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
+	<div id="loadContent">
+		<img id="imgLogo" src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="logo">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
 	<div id="container">
 		<header id="header" class="header header-maior w-100" role="banner" style="background-image: url('<?= $image ?>');" itemscope itemtype="https://schema.org/WPHeader">
 			<div id="inner-header" class="">
-				<div class="row">
-					<div class="col-12 d-flex align-items-center justify-content-center">
+				<div class="row text-white h6">
+					<div data-aos="fade-down" class="col-12 d-flex align-items-center justify-content-center flex-column flex-xl-row">
 						<img id="imgLogo" src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" alt="logo">
-						<div class="barra mr-5 ml-5"></div>
-						<h4 class="m-0 text-white"><?= the_content(7) ?></h4>
+						<div class="barra mr-5 ml-5 d-none d-xl-block "></div>
+						<?= the_content(7) ?>
 					</div>
 				</div>
 			</div>
