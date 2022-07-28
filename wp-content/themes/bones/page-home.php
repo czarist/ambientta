@@ -83,7 +83,7 @@
 										</div>
 									</div>
 								</div>
-								<div data-aos="fade-right" class="row min-h-500">
+								<div data-aos="fade-right" class="row min-h-500 flex-xl-row flex-column-reverse">
 									<div class="col-xl-6 col-12">
 										<div class="row align-items-center justify-content-end">
 											<div class="col-xl-6 col-12 d-flex publicacao-2">

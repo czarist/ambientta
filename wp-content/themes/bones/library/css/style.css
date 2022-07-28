@@ -214,10 +214,10 @@ hr {
 */
 
 p {
-    -webkit-hyphens: auto;
-    -epub-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+    -webkit-hyphens: none;
+    -epub-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
 }
 
 
@@ -729,13 +729,9 @@ more here: http://www.newnet-soft.com/blog/csstypography
 */
 
 p {
-    -ms-word-break: break-all;
-    -ms-word-wrap: break-all;
-    word-break: break-word;
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
     -webkit-hyphenate-before: 2;
     -webkit-hyphenate-after: 3;
     hyphenate-lines: 3;
@@ -1890,7 +1886,6 @@ section#secao-formulario {
 section#secao-formulario p {
     letter-spacing: 4px;
     font-size: 15px;
-    word-break: keep-all;
 }
 
 .barra {
@@ -2582,8 +2577,14 @@ you can add resource intensive styles.
 *********************/
 
 @media only screen and (max-width: 1024px) {
+    section#secao-formulario p {
+        letter-spacing: normal;
+    }
+    header#header {
+        background-attachment: local;
+    }
     #secao3 {
-        min-height: 850px;
+        min-height: 500px;
         background-size: contain;
         background-position: bottom;
         background-attachment: initial;

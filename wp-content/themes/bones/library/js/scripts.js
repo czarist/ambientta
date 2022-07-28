@@ -4,14 +4,10 @@ jQuery(document).ready(function($) {
 
         // mata load da página
         let timeout;
-        let fundo = document.getElementById('loadContent');
+        const fundo = document.getElementById('loadContent');
 
         function timeKill() {
-            timeout = setTimeout(deletLoadContent, 2500);
-        }
-
-        function deletLoadContent() {
-            fundo.remove();
+            timeout = setTimeout(fundo.remove(), 1500);
         }
 
         timeKill();
@@ -22,6 +18,5 @@ jQuery(document).ready(function($) {
                 return window.innerWidth < maxWidth;
             },
         });
-
     }
 });
