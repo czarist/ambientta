@@ -95,7 +95,7 @@
 								</div>
 							</section>
 							<section id="secao3" class="container-fluid position-relative" style="background-image: url('<?= get_field('imagem_apresentacao_3', 7) ?>');">
-								<div data-aos="fade-left" class="text-3 text-white p-4">
+								<div data-aos="fade-left" class="text-3 text-white p-4 flex-column d-flex justify-content-center align-items-xl-start align-items-center">
 									<?= get_field('texto_apresentacao_3', 7) ?>
 								</div>
 							</section>

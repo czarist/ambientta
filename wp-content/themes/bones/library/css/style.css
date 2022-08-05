@@ -709,6 +709,10 @@ section#infos h3 {
     letter-spacing: 4px;
 }
 
+section#infos h4 {
+    font-size: 20px;
+}
+
 
 /*
 The following is based of Typebase:
@@ -1710,6 +1714,25 @@ HEADER STYLES
     background-attachment: fixed;
 }
 
+section#secao3 h4 {
+    word-spacing: 6px;
+    margin-top: 2pc;
+    font-weight: 100;
+    font-family: 'MontserratRegular' !important;
+}
+
+.publicacao-1 h3 {
+    font-family: 'MontserratRegular' !important;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.publicacao-1 p,
+.publicacao-1 h3,
+.publicacao-1 h4 {
+    margin-bottom: 20px;
+}
+
 #infos {
     background-color: #DA6A5E;
     color: white;
@@ -1884,7 +1907,6 @@ section#secao-formulario {
 }
 
 section#secao-formulario p {
-    letter-spacing: 4px;
     font-size: 15px;
 }
 
@@ -2063,6 +2085,7 @@ POSTS & CONTENT STYLES
 /* entry content */
 
 .entry-content {
+    margin-top: -65px;
     padding: 1.5em 1.5em 0;
     /*
   image alignment on a screen this size may be
@@ -2577,8 +2600,9 @@ you can add resource intensive styles.
 *********************/
 
 @media only screen and (max-width: 1024px) {
-    section#secao-formulario p {
-        letter-spacing: normal;
+    section#secao3 h4 {
+        word-spacing: normal;
+        text-align: center;
     }
     header#header {
         background-attachment: local;
